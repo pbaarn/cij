@@ -114,7 +114,10 @@
           <svg class="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
           </svg>
-          <input id="searchInput" type="text" placeholder="Search topics, triggers, consent, Fabric, MVPs, Power Fx..."
+          <input id="searchInput" type="search" name="knowledge-filter-search"
+            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+            data-1p-ignore data-lpignore="true" data-bwignore data-form-type="other"
+            placeholder="Search topics, triggers, consent, Fabric, MVPs, Power Fx..."
             class="w-full pl-11 pr-10 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
           <button id="clearSearchBtn" type="button" aria-label="Clear search"
             class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1">
@@ -1209,7 +1212,7 @@
     });
 
     // ==================== EXPORT, IMPORT & GITHUB GIST SYNC ====================
-    const validItemIds = new Set(KNOWLEDGE_ITEMS.map(item => item.id));
+    const validItemIds = new Set(KNOWLEDGE_POINTS.map(item => item.id));
     let gistAutoSyncTimer = null;
 
     function buildProgressPayload() {
